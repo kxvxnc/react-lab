@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function City(props) {
@@ -24,7 +24,7 @@ function ZipSearchField(props) {
     const currentZip = event.target.value;
     setZipCode(currentZip);
     console.log(`Got zipcode value: ${currentZip}`);
-    if (currentZip.length == 5) {
+    if (currentZip.length === 5) {
         fetch(`https://ctp-zip-api.herokuapp.com/zip/${currentZip}`)
         .then((response) => response.json())
         .then((data) => {
